@@ -13,21 +13,21 @@ import com.davidhernandezn.develop.ApiRest.repository.ProductoRepository;
 
 //AGREGAMOS IMPLEMENT AL SERVICIO Y LOS IMPLEMENTAMOS
 @Service
-public class ProductServiceImp implements ProductoService{
+public class ProductoServiceImp implements ProductoService{
 	
 	//INYECCION DE DEPENDENCIAS
 	private final ProductoRepository productoRepository;
 	private final ProductoMapper productoMapper;
 	
 	//INYECCION POR EL CONSTRUCTOR
-	public ProductServiceImp(ProductoRepository productoRepository,ProductoMapper productoMapper) {
+	public ProductoServiceImp(ProductoRepository productoRepository,ProductoMapper productoMapper) {
 		this.productoRepository = productoRepository;
 		this.productoMapper = productoMapper;
 	}
 
 	@Override
 	public ProductoDto save(ProductoDto productoDto) {
-		Boolean existProduct = productoRepository.existByNombre(productoDto.getNombre());	
+		Boolean existProduct = productoRepository.existsByNombre(productoDto.getNombre());	
 		if(!existProduct) {
 			Producto producto = productoMapper.toProducto(productoDto);
 			return productoMapper.toProductoDto(productoRepository.save(producto));

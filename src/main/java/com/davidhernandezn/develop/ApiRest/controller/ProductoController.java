@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.davidhernandezn.develop.ApiRest.dto.ProductoDto;
@@ -21,13 +20,13 @@ import jakarta.validation.Valid;
 
 @RestController
 @RequestMapping("/api")
-public class ProductController {
+public class ProductoController {
 	
 	//INYECTAR PRODUCT SERVICE TIENE QUE SER LA INTERFACE
 	private final ProductoService productService;
 	
 	//INYECTAMOS EL CONSTRUCTOR A PRODUCTO SERVICE
-	public ProductController(ProductoService productService) {
+	public ProductoController(ProductoService productService) {
 		this.productService = productService;
 	} 
 	

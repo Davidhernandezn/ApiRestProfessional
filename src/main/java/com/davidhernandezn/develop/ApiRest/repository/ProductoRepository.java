@@ -20,7 +20,7 @@ import java.util.List;
 public interface ProductoRepository extends JpaRepository<Producto, Long> {
 
 	//METODOS
-	Boolean existByNombre(String nombre);//PREGUNTA SI EXIXTE EL NOMBRE GUARDADO PARA NO GUARDARSE 2 VECES
+	Boolean existsByNombre(String nombre);//PREGUNTA SI EXIXTE EL NOMBRE GUARDADO PARA NO GUARDARSE 2 VECES
 	
 	List<Producto> findByCategoria(String categoria);//LISTAR PRODUCTOS CON LA MISMA CATEGORY
 	

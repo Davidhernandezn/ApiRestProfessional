@@ -1,6 +1,7 @@
 package com.davidhernandezn.develop.ApiRest.model;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotNull;
@@ -10,6 +11,7 @@ import jakarta.validation.constraints.NotNull;
 public class Producto {
 
 	@NotNull
+	@Id
 	private Long id;
 
 	@NotNull
